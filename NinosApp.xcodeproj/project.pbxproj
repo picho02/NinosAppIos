@@ -7,18 +7,76 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3624079F288345F800B741F2 /* DataDesparacitaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3624079E288345F800B741F2 /* DataDesparacitaciones.swift */; };
+		362407A1288348ED00B741F2 /* DesparacitacionesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362407A0288348ED00B741F2 /* DesparacitacionesViewController.swift */; };
+		362407A3288383A800B741F2 /* DataVacunas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362407A2288383A800B741F2 /* DataVacunas.swift */; };
+		362407A52883845C00B741F2 /* VacunasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362407A42883845C00B741F2 /* VacunasViewController.swift */; };
+		362407A728838D4C00B741F2 /* DataPerdidos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362407A628838D4C00B741F2 /* DataPerdidos.swift */; };
+		362407A92883917800B741F2 /* ReportarExtravioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362407A82883917800B741F2 /* ReportarExtravioViewController.swift */; };
+		362407AB2883A79E00B741F2 /* DetallePerdidoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362407AA2883A79E00B741F2 /* DetallePerdidoViewController.swift */; };
+		3625BB52287DDA270093BAC2 /* Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3625BB51287DDA270093BAC2 /* Network.framework */; };
+		3625BB55287DEC570093BAC2 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 3625BB54287DEC570093BAC2 /* Lottie */; };
+		3625BB57287DEDEF0093BAC2 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3625BB56287DEDEF0093BAC2 /* LoaderView.swift */; };
+		3625BB59287DEEAB0093BAC2 /* dog.json in Resources */ = {isa = PBXBuildFile; fileRef = 3625BB58287DEEAB0093BAC2 /* dog.json */; };
+		3625BB5B287DF1C10093BAC2 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3625BB5A287DF1C10093BAC2 /* LogInViewController.swift */; };
+		3625BB5D287DF1DE0093BAC2 /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3625BB5C287DF1DE0093BAC2 /* RegistroViewController.swift */; };
+		3625BB5F287F3BA40093BAC2 /* AdoptableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3625BB5E287F3BA40093BAC2 /* AdoptableCollectionViewCell.swift */; };
+		3625BB61287F3CCE0093BAC2 /* AdoptableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3625BB60287F3CCE0093BAC2 /* AdoptableViewController.swift */; };
+		3625BB63287F46130093BAC2 /* PerdidosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3625BB62287F46130093BAC2 /* PerdidosViewController.swift */; };
+		3625BB65287F70160093BAC2 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3625BB64287F70160093BAC2 /* CardView.swift */; };
+		3625BB67287F76B80093BAC2 /* DetalleAdoptableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3625BB66287F76B80093BAC2 /* DetalleAdoptableViewController.swift */; };
+		3625BB6928808AD50093BAC2 /* PerdidoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3625BB6828808AD50093BAC2 /* PerdidoTableViewCell.swift */; };
+		3625BB6B2880C4460093BAC2 /* ManadaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3625BB6A2880C4460093BAC2 /* ManadaTableViewCell.swift */; };
+		3642DD1D287BCEA600E49046 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3642DD1C287BCEA600E49046 /* FirebaseAuth */; };
+		3642DD1F287BCEB700E49046 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 3642DD1E287BCEB700E49046 /* FirebaseFunctions */; };
+		3642DD21287C965600E49046 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3642DD20287C965600E49046 /* FirebaseFirestore */; };
+		3648C13E2880EA6600F3AA85 /* AgregarMascotaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3648C13D2880EA6600F3AA85 /* AgregarMascotaViewController.swift */; };
+		3648C1402881E19000F3AA85 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3648C13F2881E19000F3AA85 /* AVFoundation.framework */; };
+		3648C1422881E19B00F3AA85 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3648C1412881E19B00F3AA85 /* Photos.framework */; };
+		3648C144288213CA00F3AA85 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 3648C143288213CA00F3AA85 /* FirebaseStorage */; };
+		3648C146288250CB00F3AA85 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3648C145288250CB00F3AA85 /* DataManager.swift */; };
+		3648C14828832B2700F3AA85 /* DesparacitacionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3648C14728832B2700F3AA85 /* DesparacitacionTableViewCell.swift */; };
+		3648C14A28832CFB00F3AA85 /* VacunaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3648C14928832CFB00F3AA85 /* VacunaTableViewCell.swift */; };
+		3648C14C2883323700F3AA85 /* DetalleMascotaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3648C14B2883323700F3AA85 /* DetalleMascotaViewController.swift */; };
+		368D136D287B60E5006A3A4A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 368D136C287B60E5006A3A4A /* GoogleService-Info.plist */; };
 		36E22C08283DB52B00230DD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E22C07283DB52B00230DD3 /* AppDelegate.swift */; };
 		36E22C0A283DB52B00230DD3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E22C09283DB52B00230DD3 /* SceneDelegate.swift */; };
 		36E22C0C283DB52B00230DD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E22C0B283DB52B00230DD3 /* ViewController.swift */; };
 		36E22C0F283DB52B00230DD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36E22C0D283DB52B00230DD3 /* Main.storyboard */; };
 		36E22C11283DB52C00230DD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36E22C10283DB52C00230DD3 /* Assets.xcassets */; };
 		36E22C14283DB52C00230DD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36E22C12283DB52C00230DD3 /* LaunchScreen.storyboard */; };
-		36FDA6F728417CAC0059ED4D /* Mascotas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FDA6F628417CAC0059ED4D /* Mascotas.swift */; };
+		36FDA6F728417CAC0059ED4D /* Mascota.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FDA6F628417CAC0059ED4D /* Mascota.swift */; };
 		36FDA6FA284181230059ED4D /* ninosapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36FDA6F8284181230059ED4D /* ninosapp.xcdatamodeld */; };
-		36FDA6FC284181BA0059ED4D /* Mascotas+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FDA6FB284181BA0059ED4D /* Mascotas+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3624079E288345F800B741F2 /* DataDesparacitaciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDesparacitaciones.swift; sourceTree = "<group>"; };
+		362407A0288348ED00B741F2 /* DesparacitacionesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesparacitacionesViewController.swift; sourceTree = "<group>"; };
+		362407A2288383A800B741F2 /* DataVacunas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataVacunas.swift; sourceTree = "<group>"; };
+		362407A42883845C00B741F2 /* VacunasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacunasViewController.swift; sourceTree = "<group>"; };
+		362407A628838D4C00B741F2 /* DataPerdidos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPerdidos.swift; sourceTree = "<group>"; };
+		362407A82883917800B741F2 /* ReportarExtravioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportarExtravioViewController.swift; sourceTree = "<group>"; };
+		362407AA2883A79E00B741F2 /* DetallePerdidoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetallePerdidoViewController.swift; sourceTree = "<group>"; };
+		3625BB51287DDA270093BAC2 /* Network.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Network.framework; path = System/Library/Frameworks/Network.framework; sourceTree = SDKROOT; };
+		3625BB56287DEDEF0093BAC2 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		3625BB58287DEEAB0093BAC2 /* dog.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dog.json; sourceTree = "<group>"; };
+		3625BB5A287DF1C10093BAC2 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		3625BB5C287DF1DE0093BAC2 /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
+		3625BB5E287F3BA40093BAC2 /* AdoptableCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptableCollectionViewCell.swift; sourceTree = "<group>"; };
+		3625BB60287F3CCE0093BAC2 /* AdoptableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptableViewController.swift; sourceTree = "<group>"; };
+		3625BB62287F46130093BAC2 /* PerdidosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerdidosViewController.swift; sourceTree = "<group>"; };
+		3625BB64287F70160093BAC2 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		3625BB66287F76B80093BAC2 /* DetalleAdoptableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleAdoptableViewController.swift; sourceTree = "<group>"; };
+		3625BB6828808AD50093BAC2 /* PerdidoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerdidoTableViewCell.swift; sourceTree = "<group>"; };
+		3625BB6A2880C4460093BAC2 /* ManadaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManadaTableViewCell.swift; sourceTree = "<group>"; };
+		3648C13D2880EA6600F3AA85 /* AgregarMascotaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarMascotaViewController.swift; sourceTree = "<group>"; };
+		3648C13F2881E19000F3AA85 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3648C1412881E19B00F3AA85 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		3648C145288250CB00F3AA85 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		3648C14728832B2700F3AA85 /* DesparacitacionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesparacitacionTableViewCell.swift; sourceTree = "<group>"; };
+		3648C14928832CFB00F3AA85 /* VacunaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacunaTableViewCell.swift; sourceTree = "<group>"; };
+		3648C14B2883323700F3AA85 /* DetalleMascotaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleMascotaViewController.swift; sourceTree = "<group>"; };
+		368D136C287B60E5006A3A4A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		36E22C04283DB52B00230DD3 /* NinosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NinosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36E22C07283DB52B00230DD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36E22C09283DB52B00230DD3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,9 +85,8 @@
 		36E22C10283DB52C00230DD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36E22C13283DB52C00230DD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36E22C15283DB52C00230DD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		36FDA6F628417CAC0059ED4D /* Mascotas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mascotas.swift; sourceTree = "<group>"; };
+		36FDA6F628417CAC0059ED4D /* Mascota.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mascota.swift; sourceTree = "<group>"; };
 		36FDA6F9284181230059ED4D /* ninosapp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ninosapp.xcdatamodel; sourceTree = "<group>"; };
-		36FDA6FB284181BA0059ED4D /* Mascotas+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mascotas+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +94,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3625BB55287DEC570093BAC2 /* Lottie in Frameworks */,
+				3642DD1D287BCEA600E49046 /* FirebaseAuth in Frameworks */,
+				3648C1402881E19000F3AA85 /* AVFoundation.framework in Frameworks */,
+				3642DD1F287BCEB700E49046 /* FirebaseFunctions in Frameworks */,
+				3648C1422881E19B00F3AA85 /* Photos.framework in Frameworks */,
+				3648C144288213CA00F3AA85 /* FirebaseStorage in Frameworks */,
+				3642DD21287C965600E49046 /* FirebaseFirestore in Frameworks */,
+				3625BB52287DDA270093BAC2 /* Network.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3642DCE4287BBCAD00E49046 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3648C1412881E19B00F3AA85 /* Photos.framework */,
+				3648C13F2881E19000F3AA85 /* AVFoundation.framework */,
+				3625BB51287DDA270093BAC2 /* Network.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		36E22BFB283DB52B00230DD3 = {
 			isa = PBXGroup;
 			children = (
 				36E22C06283DB52B00230DD3 /* NinosApp */,
 				36E22C05283DB52B00230DD3 /* Products */,
+				3642DCE4287BBCAD00E49046 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,16 +138,39 @@
 		36E22C06283DB52B00230DD3 /* NinosApp */ = {
 			isa = PBXGroup;
 			children = (
+				3625BB58287DEEAB0093BAC2 /* dog.json */,
+				368D136C287B60E5006A3A4A /* GoogleService-Info.plist */,
 				36E22C07283DB52B00230DD3 /* AppDelegate.swift */,
 				36E22C09283DB52B00230DD3 /* SceneDelegate.swift */,
 				36E22C0B283DB52B00230DD3 /* ViewController.swift */,
 				36E22C0D283DB52B00230DD3 /* Main.storyboard */,
 				36E22C10283DB52C00230DD3 /* Assets.xcassets */,
 				36E22C12283DB52C00230DD3 /* LaunchScreen.storyboard */,
+				36FDA6F628417CAC0059ED4D /* Mascota.swift */,
 				36E22C15283DB52C00230DD3 /* Info.plist */,
-				36FDA6F628417CAC0059ED4D /* Mascotas.swift */,
 				36FDA6F8284181230059ED4D /* ninosapp.xcdatamodeld */,
-				36FDA6FB284181BA0059ED4D /* Mascotas+CoreDataProperties.swift */,
+				3625BB56287DEDEF0093BAC2 /* LoaderView.swift */,
+				3625BB5A287DF1C10093BAC2 /* LogInViewController.swift */,
+				3625BB5C287DF1DE0093BAC2 /* RegistroViewController.swift */,
+				3625BB5E287F3BA40093BAC2 /* AdoptableCollectionViewCell.swift */,
+				3625BB60287F3CCE0093BAC2 /* AdoptableViewController.swift */,
+				3625BB62287F46130093BAC2 /* PerdidosViewController.swift */,
+				3625BB64287F70160093BAC2 /* CardView.swift */,
+				3625BB66287F76B80093BAC2 /* DetalleAdoptableViewController.swift */,
+				3625BB6828808AD50093BAC2 /* PerdidoTableViewCell.swift */,
+				3625BB6A2880C4460093BAC2 /* ManadaTableViewCell.swift */,
+				3648C13D2880EA6600F3AA85 /* AgregarMascotaViewController.swift */,
+				3648C145288250CB00F3AA85 /* DataManager.swift */,
+				3648C14728832B2700F3AA85 /* DesparacitacionTableViewCell.swift */,
+				3648C14928832CFB00F3AA85 /* VacunaTableViewCell.swift */,
+				3648C14B2883323700F3AA85 /* DetalleMascotaViewController.swift */,
+				3624079E288345F800B741F2 /* DataDesparacitaciones.swift */,
+				362407A0288348ED00B741F2 /* DesparacitacionesViewController.swift */,
+				362407A2288383A800B741F2 /* DataVacunas.swift */,
+				362407A42883845C00B741F2 /* VacunasViewController.swift */,
+				362407A628838D4C00B741F2 /* DataPerdidos.swift */,
+				362407A82883917800B741F2 /* ReportarExtravioViewController.swift */,
+				362407AA2883A79E00B741F2 /* DetallePerdidoViewController.swift */,
 			);
 			path = NinosApp;
 			sourceTree = "<group>";
@@ -92,6 +191,13 @@
 			dependencies = (
 			);
 			name = NinosApp;
+			packageProductDependencies = (
+				3642DD1C287BCEA600E49046 /* FirebaseAuth */,
+				3642DD1E287BCEB700E49046 /* FirebaseFunctions */,
+				3642DD20287C965600E49046 /* FirebaseFirestore */,
+				3625BB54287DEC570093BAC2 /* Lottie */,
+				3648C143288213CA00F3AA85 /* FirebaseStorage */,
+			);
 			productName = NinosApp;
 			productReference = 36E22C04283DB52B00230DD3 /* NinosApp.app */;
 			productType = "com.apple.product-type.application";
@@ -120,6 +226,10 @@
 				Base,
 			);
 			mainGroup = 36E22BFB283DB52B00230DD3;
+			packageReferences = (
+				3642DD1B287BCDFC00E49046 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				3625BB53287DEC570093BAC2 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 36E22C05283DB52B00230DD3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,6 +247,8 @@
 				36E22C14283DB52C00230DD3 /* LaunchScreen.storyboard in Resources */,
 				36E22C11283DB52C00230DD3 /* Assets.xcassets in Resources */,
 				36E22C0F283DB52B00230DD3 /* Main.storyboard in Resources */,
+				3625BB59287DEEAB0093BAC2 /* dog.json in Resources */,
+				368D136D287B60E5006A3A4A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,12 +259,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36FDA6F728417CAC0059ED4D /* Mascotas.swift in Sources */,
+				3625BB63287F46130093BAC2 /* PerdidosViewController.swift in Sources */,
+				3648C13E2880EA6600F3AA85 /* AgregarMascotaViewController.swift in Sources */,
+				36FDA6F728417CAC0059ED4D /* Mascota.swift in Sources */,
+				3625BB5F287F3BA40093BAC2 /* AdoptableCollectionViewCell.swift in Sources */,
 				36E22C0C283DB52B00230DD3 /* ViewController.swift in Sources */,
 				36FDA6FA284181230059ED4D /* ninosapp.xcdatamodeld in Sources */,
+				3625BB6928808AD50093BAC2 /* PerdidoTableViewCell.swift in Sources */,
+				362407A728838D4C00B741F2 /* DataPerdidos.swift in Sources */,
+				3625BB5B287DF1C10093BAC2 /* LogInViewController.swift in Sources */,
+				362407A92883917800B741F2 /* ReportarExtravioViewController.swift in Sources */,
 				36E22C08283DB52B00230DD3 /* AppDelegate.swift in Sources */,
-				36FDA6FC284181BA0059ED4D /* Mascotas+CoreDataProperties.swift in Sources */,
+				3648C14A28832CFB00F3AA85 /* VacunaTableViewCell.swift in Sources */,
+				3648C146288250CB00F3AA85 /* DataManager.swift in Sources */,
+				362407A1288348ED00B741F2 /* DesparacitacionesViewController.swift in Sources */,
+				3625BB5D287DF1DE0093BAC2 /* RegistroViewController.swift in Sources */,
+				3625BB61287F3CCE0093BAC2 /* AdoptableViewController.swift in Sources */,
 				36E22C0A283DB52B00230DD3 /* SceneDelegate.swift in Sources */,
+				3625BB65287F70160093BAC2 /* CardView.swift in Sources */,
+				3624079F288345F800B741F2 /* DataDesparacitaciones.swift in Sources */,
+				3648C14C2883323700F3AA85 /* DetalleMascotaViewController.swift in Sources */,
+				362407A3288383A800B741F2 /* DataVacunas.swift in Sources */,
+				3648C14828832B2700F3AA85 /* DesparacitacionTableViewCell.swift in Sources */,
+				3625BB57287DEDEF0093BAC2 /* LoaderView.swift in Sources */,
+				3625BB67287F76B80093BAC2 /* DetalleAdoptableViewController.swift in Sources */,
+				362407AB2883A79E00B741F2 /* DetallePerdidoViewController.swift in Sources */,
+				362407A52883845C00B741F2 /* VacunasViewController.swift in Sources */,
+				3625BB6B2880C4460093BAC2 /* ManadaTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,7 +361,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -282,7 +415,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -299,7 +432,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = U84SQ9A7T9;
+				DEVELOPMENT_TEAM = 86YKL9XL32;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NinosApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -308,7 +441,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -329,7 +462,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = U84SQ9A7T9;
+				DEVELOPMENT_TEAM = 86YKL9XL32;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NinosApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -338,7 +471,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -374,6 +507,53 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3625BB53287DEC570093BAC2 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		3642DD1B287BCDFC00E49046 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3625BB54287DEC570093BAC2 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3625BB53287DEC570093BAC2 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		3642DD1C287BCEA600E49046 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3642DD1B287BCDFC00E49046 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		3642DD1E287BCEB700E49046 /* FirebaseFunctions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3642DD1B287BCDFC00E49046 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFunctions;
+		};
+		3642DD20287C965600E49046 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3642DD1B287BCDFC00E49046 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		3648C143288213CA00F3AA85 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3642DD1B287BCDFC00E49046 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		36FDA6F8284181230059ED4D /* ninosapp.xcdatamodeld */ = {
