@@ -11,10 +11,10 @@ import Network
 import WebKit
 
 class AdoptableViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout/*, UICollectionViewDelegate */{
-
-    var internetStatus = false
-    var internetType = ""
-
+    var appDelegate:AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+    var adoptableRow = 0
     @IBOutlet weak var adoptableCollectionView: UICollectionView!
 
     @IBOutlet weak var btnUsuario: UIButton!
@@ -43,65 +43,69 @@ class AdoptableViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        let monitor = NWPathMonitor()
-        monitor.pathUpdateHandler = {
-            path in
-            if path.status != .satisfied{
-                self.internetStatus = false
-            }else{
-                self.internetStatus = true
-                if path.usesInterfaceType(.wifi){
-                    self.internetType = "wifi"
-                }
-                else if path.usesInterfaceType(.cellular){
-                    self.internetType = "Cellular"
-                }
-            }
-        }
-        monitor.start(queue: DispatchQueue.global())
+        adoptableCollectionView.dataSource = self
+        adoptableCollectionView.delegate = self
+        adoptableCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
     }
     override func viewDidAppear(_ animated: Bool) {
-        if internetStatus{
+        if appDelegate.internetStatus{
             if Auth.auth().currentUser != nil{
                 btnUsuario.setTitle("Salir", for: .normal)
             }else{
                 btnUsuario.setTitle("Iniciar sesion", for: .normal)
             }
-            adoptableCollectionView.dataSource = self
-            adoptableCollectionView.delegate = self
-            adoptableCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
+
         }else{
             let alert = UIAlertController(title: "No hay internet", message: "Se requiere conexión a internet", preferredStyle: .alert)
             let boton = UIAlertAction(title: "ok", style: .default)
             alert.addAction(boton)
                 self.present(alert,animated: true)
         }
+        adoptableCollectionView.reloadData()
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
+        if segue.identifier == "detalleAdoptable"{
+        let vc = segue.destination as! DetalleAdoptableViewController
         // Pass the selected object to the new view controller.
+            let item = DataAdoptable.instance.info[adoptableRow]
+            vc.item = item
+        }
     }
-    */
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return DataAdoptable.instance.info.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AdoptableCollectionViewCell", for: indexPath) as! AdoptableCollectionViewCell
+        adoptableRow = indexPath.row
+        let tmp = DataAdoptable.instance.info[adoptableRow]
         cell.setup(index: indexPath.row)
+        cell.duenioMascotaAdoptable.text = tmp.idDuenio
+        cell.nombreMascotaAdoptable.text = tmp.nombre
+        let url = URL(string: tmp.foto)!
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data, error == nil else{
+                return
+            }
+            DispatchQueue.main.async {
+            let imagen = UIImage(data: data)
+                cell.imagenMascotaAdoptable.image = imagen
+                
+            }
+        }
+        task.resume()
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 190, height: 200)
+        return CGSize(width: 150, height: 180)
     }
-    /*func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Hola")
-    }*/
+
 
 }

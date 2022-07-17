@@ -20,7 +20,6 @@ class DataManager: NSObject {
     var datas = [String:Any]()
     let db = Firestore.firestore()
     public func getInfo(){
-        if Auth.auth().currentUser != nil{
         db.collection("users").document("\(Auth.auth().currentUser!.uid)").collection("mascotas").addSnapshotListener({ querySnapshot, err in
             self.info.removeAll()
                     if let err = err {
@@ -47,5 +46,4 @@ class DataManager: NSObject {
                 self.present(alert,animated: true)
         }*/
      }
-    }
 }

@@ -18,6 +18,10 @@ class DetallePerdidoViewController: UIViewController {
     @IBOutlet weak var fechaExtravio: UILabel!
     @IBOutlet weak var detalles: UILabel!
     @IBAction func contactarBtn(_ sender: Any) {
+        let alert = UIAlertController(title: "Te contactaremos", message: "Pronto nos pondremos en contacto", preferredStyle: .alert)
+        let boton = UIAlertAction(title: "ok", style: .default)
+        alert.addAction(boton)
+        self.present(alert,animated: true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -16,8 +16,103 @@ import SwiftUI
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
     var rowExtravio = 0
     let db = Firestore.firestore()
+    let image = LoaderView()
+    var idMascotas = [String]()
+    var appDelegate:AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+
+    @IBOutlet weak var tablaManada: UITableView!
+    @IBOutlet weak var btnUsuario: UIButton!
+    @IBAction func btnLogIn(_ sender: Any) {
+        if Auth.auth().currentUser != nil{
+            let alert = UIAlertController(title: "", message: "Desea salir de la app", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default, handler: nil))
+            let btnNo = UIAlertAction(title: "si", style: .destructive){
+                action in
+                do{
+                try Auth.auth().signOut()
+                    self.btnUsuario.setTitle("Iniciar sesion", for: .normal)
+                }catch{
+                    
+                }
+            }
+            alert.addAction(btnNo)
+            self.present(alert, animated: true, completion: nil)
+            
+            
+        }else{
+            btnUsuario.setTitle("Iniciar sesion", for: .normal)
+            self.performSegue(withIdentifier: "logIn", sender: nil)
+        }
+        
+        //
+    }
+    @IBAction func addMascota(_ sender: Any) {
+        if Auth.auth().currentUser != nil{
+            self.performSegue(withIdentifier: "agregarMascota", sender: nil)
+
+        }else{
+            self.performSegue(withIdentifier: "logIn", sender: nil)
+        }
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        if appDelegate.internetStatus{
+            if Auth.auth().currentUser != nil{
+                btnUsuario.setTitle("Salir", for: .normal)
+            }else{
+                btnUsuario.setTitle("Iniciar sesion", for: .normal)
+            }
+        }else{
+            let alert = UIAlertController(title: "No hay internet", message: "Se requiere conexión a internet", preferredStyle: .alert)
+            let boton = UIAlertAction(title: "ok", style: .default)
+            alert.addAction(boton)
+                self.present(alert,animated: true)
+        }
+        
+        
+
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+       
+        if DataManager.instance.info.count == 0{
+        image.frame.size = CGSize(width: 400, height: 400)
+        image.center = self.view.center
+        image.tag = 666
+        self.view.addSubview(image)}
+        if DataManager.instance.info.count != 0{
+            image.removeFromSuperview()
+        }
+        tablaManada.separatorStyle = .none
+        tablaManada.showsVerticalScrollIndicator = false
+        self.tablaManada.dataSource = self
+        self.tablaManada.delegate = self
+        self.tablaManada.reloadData()
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        if segue.identifier == "detalleMascota" {
+        let vc = segue.destination as! DetalleMascotaViewController
+        // Pass the selected object to the new view controller.
+        let item = DataManager.instance.info[tablaManada.indexPathForSelectedRow!.row]
+            vc.item = item
+        }else if segue.identifier == "reportarPerdido"{
+            let vc = segue.destination as! ReportarExtravioViewController
+            let item = DataManager.instance.info[rowExtravio]
+                vc.item = item
+        }
+    }
+    
+    //Funciones de la tabla
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 130
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -37,11 +132,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 self.performSegue(withIdentifier: "reportarPerdido", sender: nil)
                 
             }else{
+                self.rowExtravio = indexPath.row
                 let alert = UIAlertController(title: "Volvio a casa", message: "Quitar reporte", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default, handler: nil))
                 let btnNo = UIAlertAction(title: "si", style: .destructive){
                     action in
-                    let tmp = DataPerdidos.instance.info[self.rowExtravio]
+                    let tmp = DataManager.instance.info[self.rowExtravio]
                     self.db.collection("perdidos").document(tmp.idMascota).delete()
                     self.db.collection("users").document(tmp.idDuenio).collection("mascotas").document(tmp.idMascota).setData([
                         "idMascota" : tmp.idMascota,
@@ -89,119 +185,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         task.resume()
         cell.imagenManada.layer.cornerRadius = cell.imagenManada.frame.height/2
         return cell
-    }
-    
-    var internetStatus = false
-    var internetType = ""
-    let image = LoaderView()
- 
-    var idMascotas = [String]()
-
-    @IBOutlet weak var tablaManada: UITableView!
-    @IBOutlet weak var btnUsuario: UIButton!
-    @IBAction func btnLogIn(_ sender: Any) {
-        if Auth.auth().currentUser != nil{
-            let alert = UIAlertController(title: "", message: "Desea salir de la app", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default, handler: nil))
-            let btnNo = UIAlertAction(title: "si", style: .destructive){
-                action in
-                do{
-                try Auth.auth().signOut()
-                    self.btnUsuario.setTitle("Iniciar sesion", for: .normal)
-                }catch{
-                    
-                }
-            }
-            alert.addAction(btnNo)
-            self.present(alert, animated: true, completion: nil)
-            
-            
-        }else{
-            btnUsuario.setTitle("Iniciar sesion", for: .normal)
-            self.performSegue(withIdentifier: "logIn", sender: nil)
-        }
-        
-        //
-    }
-    @IBAction func addMascota(_ sender: Any) {
-        if Auth.auth().currentUser != nil{
-            self.performSegue(withIdentifier: "agregarMascota", sender: nil)
-
-        }else{
-            self.performSegue(withIdentifier: "logIn", sender: nil)
-        }
-    }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        DataManager.instance.info.count
-        
-        
-        let monitor = NWPathMonitor()
-        monitor.pathUpdateHandler = {
-            path in
-            if path.status != .satisfied{
-                self.internetStatus = false
-            }else{
-                self.internetStatus = true
-                if path.usesInterfaceType(.wifi){
-                    self.internetType = "wifi"
-                }
-                else if path.usesInterfaceType(.cellular){
-                    self.internetType = "Cellular"
-                }
-            }
-        } // Espera un closure?(funcion anonima) se ejecuta de manera asincrona
-        monitor.start(queue: DispatchQueue.global())
-        if let unView = self.view.viewWithTag(666) {
-                    unView.removeFromSuperview()
-                }
-
-
-
-        /**/
-        // Do any additional setup after loading the view.
-    }
-    override func viewDidAppear(_ animated: Bool) {
-
-        if Auth.auth().currentUser != nil{
-            btnUsuario.setTitle("Salir", for: .normal)
-        }else{
-            btnUsuario.setTitle("Iniciar sesion", for: .normal)
-        }
-        
-
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-       
-        if DataManager.instance.info.count == 0{
-        image.frame.size = CGSize(width: 400, height: 400)
-        image.center = self.view.center
-        image.tag = 666
-        self.view.addSubview(image)}
-        if DataManager.instance.info.count != 0{
-            image.removeFromSuperview()
-        }
-        tablaManada.separatorStyle = .none
-        tablaManada.showsVerticalScrollIndicator = false
-        self.tablaManada.dataSource = self
-        self.tablaManada.delegate = self
-        self.tablaManada.reloadData()
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        if segue.identifier == "detalleMascota" {
-        let vc = segue.destination as! DetalleMascotaViewController
-        // Pass the selected object to the new view controller.
-        let item = DataManager.instance.info[tablaManada.indexPathForSelectedRow!.row]
-            vc.item = item
-        }else if segue.identifier == "reportarPerdido"{
-            let vc = segue.destination as! ReportarExtravioViewController
-            let item = DataManager.instance.info[rowExtravio]
-                vc.item = item
-        }
     }
 
     

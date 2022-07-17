@@ -10,6 +10,9 @@ import FirebaseAuth
 import FirebaseFirestore
 
 class ReportarExtravioViewController: UIViewController {
+    var appDelegate:AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
     var item:Mascota?
     let db = Firestore.firestore()
     @IBOutlet weak var fechaExtravio: UITextField!
@@ -19,20 +22,21 @@ class ReportarExtravioViewController: UIViewController {
         if lugarExtravio.hasText{
         if detalles.hasText{
             if fechaExtravio.hasText{
-                var idMascota = self.item!.idMascota
-                var colleccion = db.collection("perdidos")
+                let idMascota = self.item!.idMascota
+                if appDelegate.internetStatus{
+                let colleccion = db.collection("perdidos")
                 colleccion.document(idMascota).setData([
-                    "idMascota" : self.item!.idMascota ?? "",
-                    "idDuenio" : self.item!.idDuenio ?? "",
-                    "nombre" : self.item!.nombre ?? "",
-                    "nacimiento" : self.item!.nacimiento ?? "",
+                    "idMascota" : self.item!.idMascota,
+                    "idDuenio" : self.item!.idDuenio,
+                    "nombre" : self.item!.nombre,
+                    "nacimiento" : self.item!.nacimiento,
                     "sexo" : self.item!.sexo as Bool,
-                    "raza" : self.item!.raza ?? "",
+                    "raza" : self.item!.raza,
                     "esterilizado" : self.item!.esterilizado as Bool,
                     "talla" : self.item!.talla ,
                     "extraviado" : true,
-                    "foto" : self.item!.foto ?? "",
-                    "detalles": detalles!.text ?? "",
+                    "foto" : self.item!.foto,
+                    "detalles": detalles!.text,
                     "fechaExtravio": fechaExtravio!.text ?? "",
                     "lugarExtravio" : lugarExtravio.text ?? ""
                     
@@ -54,7 +58,15 @@ class ReportarExtravioViewController: UIViewController {
             ])
             
             }
-                self.navigationController?.popViewController(animated: true)
+                    self.navigationController?.popViewController(animated: true)
+            }
+            else{
+                let alert = UIAlertController(title: "No hay internet", message: "Se requiere conexión a internet", preferredStyle: .alert)
+                let boton = UIAlertAction(title: "ok", style: .default)
+                alert.addAction(boton)
+                    self.present(alert,animated: true)
+            }
+                    
         }
         }
             

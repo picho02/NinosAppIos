@@ -27,6 +27,7 @@
 		3625BB67287F76B80093BAC2 /* DetalleAdoptableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3625BB66287F76B80093BAC2 /* DetalleAdoptableViewController.swift */; };
 		3625BB6928808AD50093BAC2 /* PerdidoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3625BB6828808AD50093BAC2 /* PerdidoTableViewCell.swift */; };
 		3625BB6B2880C4460093BAC2 /* ManadaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3625BB6A2880C4460093BAC2 /* ManadaTableViewCell.swift */; };
+		363D2B2C28848E95002D2B01 /* DataAdoptable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363D2B2B28848E95002D2B01 /* DataAdoptable.swift */; };
 		3642DD1D287BCEA600E49046 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3642DD1C287BCEA600E49046 /* FirebaseAuth */; };
 		3642DD1F287BCEB700E49046 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 3642DD1E287BCEB700E49046 /* FirebaseFunctions */; };
 		3642DD21287C965600E49046 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3642DD20287C965600E49046 /* FirebaseFirestore */; };
@@ -69,6 +70,7 @@
 		3625BB66287F76B80093BAC2 /* DetalleAdoptableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleAdoptableViewController.swift; sourceTree = "<group>"; };
 		3625BB6828808AD50093BAC2 /* PerdidoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerdidoTableViewCell.swift; sourceTree = "<group>"; };
 		3625BB6A2880C4460093BAC2 /* ManadaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManadaTableViewCell.swift; sourceTree = "<group>"; };
+		363D2B2B28848E95002D2B01 /* DataAdoptable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAdoptable.swift; sourceTree = "<group>"; };
 		3648C13D2880EA6600F3AA85 /* AgregarMascotaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarMascotaViewController.swift; sourceTree = "<group>"; };
 		3648C13F2881E19000F3AA85 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		3648C1412881E19B00F3AA85 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
@@ -171,6 +173,7 @@
 				362407A628838D4C00B741F2 /* DataPerdidos.swift */,
 				362407A82883917800B741F2 /* ReportarExtravioViewController.swift */,
 				362407AA2883A79E00B741F2 /* DetallePerdidoViewController.swift */,
+				363D2B2B28848E95002D2B01 /* DataAdoptable.swift */,
 			);
 			path = NinosApp;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				3648C14828832B2700F3AA85 /* DesparacitacionTableViewCell.swift in Sources */,
 				3625BB57287DEDEF0093BAC2 /* LoaderView.swift in Sources */,
 				3625BB67287F76B80093BAC2 /* DetalleAdoptableViewController.swift in Sources */,
+				363D2B2C28848E95002D2B01 /* DataAdoptable.swift in Sources */,
 				362407AB2883A79E00B741F2 /* DetallePerdidoViewController.swift in Sources */,
 				362407A52883845C00B741F2 /* VacunasViewController.swift in Sources */,
 				3625BB6B2880C4460093BAC2 /* ManadaTableViewCell.swift in Sources */,
